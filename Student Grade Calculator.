@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    int physics, chemistry, biology, math, computer;
+    
+    // Read marks for all five subjects
+    scanf("%d %d %d %d %d", &physics, &chemistry, &biology, &math, &computer);
+    
+    // Validate marks (optional, based on problem constraints)
+    if (physics < 0 || physics > 100 || chemistry < 0 || chemistry > 100 ||
+        biology < 0 || biology > 100 || math < 0 || math > 100 || computer < 0 || computer > 100) {
+        printf("Error: Invalid marks input\n");
+        return 1;  // Exit with error code
+    }
+    
+    // Calculate total and percentage
+    int total = physics + chemistry + biology + math + computer;
+    double percentage = (total / 500.0) * 100.0;
+    
+    // Determine grade based on percentage
+    char grade;
+    if (percentage >= 90.0) {
+        grade = 'A';
+    } else if (percentage >= 80.0) {
+        grade = 'B';
+    } else if (percentage >= 70.0) {
+        grade = 'C';
+    } else if (percentage >= 60.0) {
+        grade = 'D';
+    } else if (percentage >= 40.0) {
+        grade = 'E';
+    } else {
+        grade = 'F';
+    }
+    
+    // Print results with 2 decimal places
+    printf("Percentage = %.2lf\n", percentage);
+    printf("Grade = %c\n", grade);
+    
+    return 0;
+}
