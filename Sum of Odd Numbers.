@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+    
+    // Calculate the count of odd numbers up to N
+    int k = (N + 1) / 2;
+    
+    // Sum of first k odd numbers = k^2
+    int sum = k * k;
+    
+    printf("%d\n", sum);
+    return 0;
+}
