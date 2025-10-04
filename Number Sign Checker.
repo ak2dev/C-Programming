@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+
+    // Read the integer input from the user
+    if (scanf("%d", &N) != 1) {
+        // Handle invalid input gracefully
+        printf("Invalid input\n");
+        return 1;
+    }
+
+    // Check the value of N and print the result accordingly
+    if (N > 0) {
+        printf("Positive\n");
+    } else if (N < 0) {
+        printf("Negative\n");
+    } else {
+        printf("Zero\n");
+    }
+
+    return 0;
+}
