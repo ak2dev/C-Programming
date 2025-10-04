@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    long long sum;
+
+    // Read input
+    scanf("%d", &N);
+
+    // Check for valid input
+    if (N < 1) {
+        printf("Invalid input. N must be a natural number (>= 1).\n");
+        return 1;
+    }
+
+    // Calculate sum using formula
+    sum = (long long)N * (N + 1) / 2;
+
+    // Output the result
+    printf("%lld\n", sum);
+
+    return 0;
+}
