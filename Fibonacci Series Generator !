@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    int a = 0, b = 1, next;
+
+    // Input number of terms
+    scanf("%d", &n);
+
+    // Handle first few cases
+    if (n <= 0) {
+        return 0; // No output for non-positive n
+    }
+
+    // Print first term
+    printf("%d", a);
+
+    // If more terms exist, print them
+    for (int i = 1; i < n; i++) {
+        printf(" %d", b);
+        next = a + b;
+        a = b;
+        b = next;
+    }
+
+    return 0;
+}
