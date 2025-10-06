@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    long long factorial = 1; // use long long to handle large values
+
+    // Input
+    scanf("%d", &n);
+
+    // Calculate factorial
+    for (int i = 1; i <= n; i++) {
+        factorial *= i;
+    }
+
+    // Output
+    printf("%lld", factorial);
+
+    return 0;
+}
