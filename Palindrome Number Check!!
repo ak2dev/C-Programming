@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int N, original, reversed = 0;
+    scanf("%d", &N);
+
+    // Negative numbers cannot be palindrome due to '-' sign
+    if (N < 0) {
+        printf("Not Palindrome\n");
+        return 0;
+    }
+
+    original = N;
+
+    // Reverse the number
+    while (N > 0) {
+        int digit = N % 10;
+        reversed = reversed * 10 + digit;
+        N /= 10;
+    }
+
+    // Check if reversed equals original
+    if (reversed == original)
+        printf("Palindrome\n");
+    else
+        printf("Not Palindrome\n");
+
+    return 0;
+}
+
