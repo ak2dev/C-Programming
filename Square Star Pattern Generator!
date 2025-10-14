@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    
+    // Read the input integer N
+    scanf("%d", &N);
+    
+    // Loop through rows
+    for(int i = 0; i < N; i++) {
+        // Loop through columns
+        for(int j = 0; j < N; j++) {
+            printf("* ");
+        }
+        // Move to the next line after each row
+        printf("\n");
+    }
+    
+    return 0;
+}
