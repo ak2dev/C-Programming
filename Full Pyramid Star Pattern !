@@ -2,23 +2,25 @@
 
 int main() {
     int N;
-    scanf("%d", &N);
-
+    scanf("%d", &N); // Read number of rows
+    
+    // Loop through each row
     for (int i = 1; i <= N; i++) {
         // Print leading spaces
-        for (int s = 1; s <= N - i; s++) {
-            printf("  "); // Two spaces for better centering because stars have spaces between them
+        // For row i, we need (N-i) spaces before stars
+        for (int j = 1; j <= N - i; j++) {
+            printf("  "); // Two spaces for better alignment
         }
-
-        // Print stars with a space after each (except last)
+        
+        // Print stars for current row
+        // Row i has (2*i-1) stars
         for (int j = 1; j <= (2 * i - 1); j++) {
-            printf("*");
-            if (j != 2 * i - 1) {
-                printf(" ");
-            }
+            printf("* ");
         }
+        
+        // Move to next line after each row
         printf("\n");
     }
-
+    
     return 0;
 }
