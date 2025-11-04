@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int R, C;
+    scanf("%d %d", &R, &C);
+
+    int A[100][100];
+
+    // Read the matrix
+    for (int i = 0; i < R; i++) {
+        for (int j = 0; j < C; j++) {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    // Print the transpose matrix
+    // Transpose matrix size will be C x R
+    for (int i = 0; i < C; i++) {
+        for (int j = 0; j < R; j++) {
+            printf("%d", A[j][i]);
+            if (j != R - 1) {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
