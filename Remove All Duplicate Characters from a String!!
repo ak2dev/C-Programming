@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char S[1001], result[1001];
+    int freq[256] = {0};   // To track if a character has appeared
+    int i, j = 0;
+
+    // Read input string
+    fgets(S, sizeof(S), stdin);
+
+    // Remove newline character if present
+    int len = strlen(S);
+    if (S[len - 1] == '\n')
+        S[len - 1] = '\0';
+
+    // Process string and keep first occurrences only
+    for (i = 0; S[i] != '\0'; i++) {
+        unsigned char ch = S[i];
+        if (freq[ch] == 0) {  // If character not seen before
+            freq[ch] = 1;
+            result[j++] = ch;
+        }
+    }
+    result[j] = '\0';  // Null terminate the result string
+
+    // Print final string
+    printf("%s\n", result);
+
+    return 0;
+}
