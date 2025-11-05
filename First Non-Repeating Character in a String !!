@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char S[1001];
+    int freq[256] = {0};  // To store frequency of all ASCII characters
+    int i;
+    
+    // Read input string
+    fgets(S, sizeof(S), stdin);
+    
+    // Remove newline character if present
+    int len = strlen(S);
+    if (S[len - 1] == '\n')
+        S[len - 1] = '\0';
+    
+    // Count frequency of each character
+    for (i = 0; S[i] != '\0'; i++) {
+        freq[(unsigned char)S[i]]++;
+    }
+    
+    // Find first non-repeating character
+    for (i = 0; S[i] != '\0'; i++) {
+        if (freq[(unsigned char)S[i]] == 1) {
+            printf("%c\n", S[i]);
+            return 0;
+        }
+    }
+    
+    // If no unique character found
+    printf("-1\n");
+    
+    return 0;
+}
